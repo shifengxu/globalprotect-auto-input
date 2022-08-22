@@ -3,16 +3,19 @@ NTU VPN tool GlobalProtect Auto Input (testing version). A demo is as below:
 
 ![](./docs/demo1.gif)
 
-# Prerequisites
+## 1 Acknowledgement
+I referenced much code from: https://github.com/michaelnoonan/inputsimulator
+
+## 2 Prerequisites
 There are some restrictions you should know before using it.
 
-## 1, Only on Windows OS
+### 2.1, Only on Windows OS
 This tool is develped by C# on Windows OS. And so far it only works on Windows OS.
 Its mechanism is just to simulate the keyboard click event. So it relays on the computer keyboard deeply. Different computer may have different keyboard layout, and therefore affect this tool. The developing environment is ThinkPad P14s, as below:
 
 <img src="./docs/thinkpad-keyboard.png" width="800" height="600" />
 
-## 2, VPN tool GlobalProtect should be installed
+### 2.2, VPN tool GlobalProtect should be installed
 The GlobalProtect path should be:
 ```
 C:\Program Files\Palo Alto Networks\GlobalProtect\
@@ -27,7 +30,7 @@ After clicking the "Connection" button, its popup dialog will show up like this:
 
 <img src="./docs/ntu_vpn_gp_dialog.png" width="800" height="400" />
 
-# Usage
+## 3 Usage
 We can just clone or download the [/exe](./exe) folder, and run the `ConsoleApp1.exe` directly. The Email and password are in the file [./exe/email_pword.txt](./exe/email_pword.txt), under the same folder. We should specify our own information in this file, as below:
 
 ```

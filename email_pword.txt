@@ -1,0 +1,15 @@
+
+# this is for credential.
+
+# note:
+# 1, blank line will be ignored.
+# 2, comment line starts wile #
+# 3, The setting is key-value pair, separated by colon.
+# 4, In the below settings, there should be whitespace between colon.
+# 	The reason is: some password may contains whitespace, so the settings
+# 	are sensitive to whitespace.
+
+# sample:
+#   email:sss001@student.main.ntu.edu.sg
+#   pword:ncwcDjc@#@$
+

@@ -58,10 +58,11 @@ namespace ConsoleApp1
                 Console.WriteLine($"Kill process  : {pName}");
                 this.ks.Sleep(2000);
             }
-            Console.WriteLine($"Launch process :{pName}");
+            Console.WriteLine($"Launch process: {pName}");
             this.TriggerGlobalProtect();
-            this.ks.Sleep(2000);
+            this.ks.Sleep(4000);
             this.TriggerGlobalProtect();  // trigger twice, to open the small window
+            this.ks.Sleep(2000);
             tray_prs = FindProcessByName(pName);
 
             if (tray_prs == null)
@@ -71,8 +72,8 @@ namespace ConsoleApp1
             }
             var hWnd = tray_prs.MainWindowHandle;
             SetForegroundWindow(hWnd);
-            this.ks.KeyPress(VirtualKeyCode.SPACE);  // click the "Connect" button
-            Console.WriteLine($"Found process  :{pName}. PID: {tray_prs.Id}. Click connect...");
+            this.ks.KeyPress(VirtualKeyCode.RETURN);  // click the "Connect" button
+            Console.WriteLine($"Found process : {pName}. PID: {tray_prs.Id}. Click connect...");
 
             this.ks.Sleep(8000);  // sleep longer, in case it not pop up the dialog
             return true;
@@ -146,6 +147,17 @@ namespace ConsoleApp1
                 return String.Empty;
             }
             Console.WriteLine("input email...");
+
+            // this is a tricky workaround. to make sure the Email inputbox has focus.
+            this.ks.KeyPress(VirtualKeyCode.TAB);
+            this.ks.Sleep(100);
+            this.ks.KeyDown(VirtualKeyCode.SHIFT);
+            this.ks.Sleep(100);
+            this.ks.KeyPress(VirtualKeyCode.TAB);
+            this.ks.Sleep(100);
+            this.ks.KeyUp(VirtualKeyCode.SHIFT);
+            this.ks.Sleep(100);
+
             this.InputString(email);
             this.ks.KeyPress(VirtualKeyCode.TAB);
             this.ks.Sleep(1000);
